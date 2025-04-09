@@ -110,7 +110,7 @@ elif choice == "Retrieve Data":
                 st.error(f"❌ Incorrect passkey! Attempts left: {attempts_left}")
                 if st.session_state.failed_attempts >= 3:
                     st.warning("🚫 Too many failed attempts. Redirecting to login.")
-                    st.experimental_rerun()
+                    st.rerun()
         else:
             st.error("⚠️ Please provide both encrypted text and passkey.")
 
