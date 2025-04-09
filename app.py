@@ -140,6 +140,6 @@ elif choice == "Login":
         if login_input == "admin123":
             st.session_state.failed_attempts = 0
             st.success("✅ Reauthorized. Back to Retrieve Page.")
-            st.experimental_rerun()
+            st.rerun()
         else:
             st.error("❌ Incorrect admin password!")
