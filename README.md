@@ -1,57 +1,27 @@
-# 🛡️ Secure Data Encryption System (Streamlit)
+# 🛡️ Secure Data Vault
 
-A **Streamlit-based secure data storage and retrieval app** that allows users to:
-- Encrypt and store sensitive data using a **passkey**.
-- Decrypt stored data using the **correct passkey**.
-- Redirect to a login page after **multiple failed attempts** for added security.
-- All data is stored **in-memory** (no external database required).
+A Streamlit-based secure data encryption and retrieval system with enhanced protection, lockout mechanisms, and admin override functionality.
 
----
+## 🔧 Features
 
-## 🚀 Features
-
-- 🔐 **AES-based encryption** using Python's `cryptography` (Fernet).
-- 🔑 **SHA-256 passkey hashing** for secure verification.
-- ❗ **Three-strike lockout** mechanism for failed decryption attempts.
-- 🔁 **Login reauthorization** after failed attempts.
-- 🧠 Intuitive and user-friendly **Streamlit UI**.
-- 🧪 Fully **in-memory** solution — perfect for demos and learning encryption basics.
+- 🔐 **Encrypt Data** with a passkey using Fernet encryption.
+- 🔓 **Decrypt Data** using the correct passkey.
+- 🚫 **Lock Mechanism**: After 3 failed decryption attempts, the data is locked for 5 minutes.
+- 🔄 **Live Countdown**: Shows remaining lock time on failed access attempts.
+- 🔑 **Admin Access** to unlock encrypted data early using a master password.
+- 💾 **Persistent Storage** in `data.json` and `lock.json`.
 
 ---
 
-## 📦 Tech Stack
+## 🚀 Getting Started
 
-| Component       | Description                    |
-|----------------|--------------------------------|
-| `Streamlit`     | UI Framework                   |
-| `cryptography`  | Fernet encryption module       |
-| `hashlib`       | SHA-256 hashing of passkeys    |
-| `Python`        | Core logic and encryption flow |
+### Prerequisites
 
----
-
-## 🖥️ How It Works
-
-### 1. Store Data
-- User enters plain text and a passkey.
-- The text is encrypted using **Fernet** and the passkey is hashed using **SHA-256**.
-- Both are stored in an in-memory dictionary.
-
-### 2. Retrieve Data
-- User enters the **encrypted text** and their **original passkey**.
-- If the hashed passkey matches, data is decrypted and displayed.
-- If not, a failed attempt is counted.
-- On 3rd failed attempt, the user is redirected to the **login page**.
-
-### 3. Login Page
-- Requires a hardcoded admin password (`admin123`) to reset failed attempts.
-
----
-
-## 🛠️ Installation & Usage
-
-### 🔧 Requirements
 - Python 3.8+
-- Required packages:
-  ```bash
-  pip install streamlit cryptography
+- Streamlit
+- Cryptography
+
+Install dependencies:
+
+```bash
+pip install streamlit cryptography
